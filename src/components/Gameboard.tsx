@@ -16,24 +16,24 @@ const Gameboard = () => {
 
       <div className="gameboard__container">
         <div className="gameboard__row">
-          <div className="gameboard__box" id="1" onClick={(e) => handleClick(e)}></div>
-          <div className="gameboard__box" id="2" onClick={(e) => handleClick(e)}></div>
-          <div className="gameboard__box" id="3" onClick={(e) => handleClick(e)}></div>
+          <div className="gameboard__box" id="1" onClick={(e) => handleClick()}></div>
+          <div className="gameboard__box" id="2" onClick={(e) => handleClick()}></div>
+          <div className="gameboard__box" id="3" onClick={(e) => handleClick()}></div>
         </div>
 
         <div className="gameboard__row">
-          <div className="gameboard__box" id="4" onClick={(e) => handleClick(e)}></div>
-          <div className="gameboard__box" id="5" onClick={(e) => handleClick(e)}></div>
-          <div className="gameboard__box" id="6" onClick={(e) => handleClick(e)}></div>
+          <div className="gameboard__box" id="4" onClick={(e) => handleClick()}></div>
+          <div className="gameboard__box" id="5" onClick={(e) => handleClick()}></div>
+          <div className="gameboard__box" id="6" onClick={(e) => handleClick()}></div>
         </div>
 
         <div className="gameboard__row">
-          <div className="gameboard__box" id="7" onClick={(e) => handleClick(e)}></div>
-          <div className="gameboard__box" id="8" onClick={(e) => handleClick(e)}></div>
-          <div className="gameboard__box" id="9" onClick={(e) => handleClick(e)}></div>
+          <div className="gameboard__box" id="7" onClick={(e) => handleClick()}></div>
+          <div className="gameboard__box" id="8" onClick={(e) => handleClick()}></div>
+          <div className="gameboard__box" id="9" onClick={(e) => handleClick()}></div>
         </div>
       </div>
-      <button type="button" onClick={(e) => resetButton(e)} >Reset</button>
+      <button type="button" onClick={(e) => resetButton()} >Reset</button>
 
     </div>
   );
