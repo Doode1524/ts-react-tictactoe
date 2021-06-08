@@ -1,0 +1,20 @@
+.gameboard {
+}
+.gameboard__container {
+}
+.gameboard__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gameboard__box {
+  border-style: solid;
+  padding: 100px;
+  width: 100px;
+  height: 100px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
