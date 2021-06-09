@@ -16,15 +16,15 @@ const GameContainer = () => {
     [2, 4, 6],
   ];
   // eslint-disable-next-line no-use-before-define
-  const handleClick = (e) => {
-    if (e.target.innerHTML === "" && turn === "X") {
-      e.target.innerHTML = turn;
+  const handleClick = (e: React.MouseEvent) => {
+    if ((e.target as Element).innerHTML === "" && turn === "X") {
+        (e.target as Element).innerHTML = turn;
       const newArry = board;
       newArry[e.target.id - 1] = turn;
       setBoard(newArry);
       setTurn("O");
-    } else if (e.target.innerHTML === "" && turn === "O") {
-      e.target.innerHTML = turn;
+    } else if ((e.target as Element).innerHTML === "" && turn === "O") {
+        (e.target as Element).innerHTML = turn;
       const newArry = board;
       newArry[e.target.id - 1] = turn;
       setBoard(newArry);
@@ -33,7 +33,7 @@ const GameContainer = () => {
   };
   useEffect(() => checkWinningCombo(), [handleClick]);
 
-  const resetButton = (e) => {
+  const resetButton = (e: React.MouseEvent) => {
     const boxes = document.querySelectorAll(".gameboard__box");
 
     boxes.forEach((element) => {
