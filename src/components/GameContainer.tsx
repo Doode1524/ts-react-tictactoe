@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Gameboard from "./Gameboard";
-const GameContainer = () => {
+const GameContainer = (): JSX.Element => {
 
   let winnerEl = document.getElementById("winner")
   let turnEl = document.getElementById("turn")

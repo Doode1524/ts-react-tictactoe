@@ -2,7 +2,7 @@
 import React, {MouseEvent} from "react";
 import "../CSS/Gameboard.css";
 
-const Gameboard = () => {
+const Gameboard = (): JSX.Element => {
   const handleClick = (e: MouseEvent) => {
 
   }
