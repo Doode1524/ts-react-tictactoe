@@ -5,9 +5,9 @@ const GameContainer = (): JSX.Element => {
   let winnerEl = document.getElementById("winner")
   let turnEl = document.getElementById("turn")
 
-  const [turn, setTurn] = useState("X");
-  const [winner, setWinner] = useState(null);
-  const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
+  const [turn, setTurn] = useState<string>("X");
+  const [winner, setWinner] = useState<null | string>(null);
+  const [board, setBoard] = useState<Array<String>>(["", "", "", "", "", "", "", "", ""]);
 
   const winningCombo = [
     [0, 1, 2],
@@ -38,7 +38,7 @@ const GameContainer = (): JSX.Element => {
   useEffect(() => checkWinningCombo(), [handleClick]);
 
   const resetButton = (e: React.MouseEvent) => {
-    const boxes = document.querySelectorAll(".gameboard__box");
+    const boxes = document.querySelectorAll<HTMLElement>(".gameboard__box");
 
     boxes.forEach((element) => {
       element.innerHTML = "";
@@ -63,7 +63,7 @@ const GameContainer = (): JSX.Element => {
         board[combo[0]] === board[combo[1]] &&
         board[combo[1]] === board[combo[2]]
       ) {
-        const boxes = document.querySelectorAll(".gameboard__box");
+        const boxes = document.querySelectorAll<HTMLElement>(".gameboard__box");
         boxes.forEach((element) => {
           element.style.pointerEvents = "none";
         });
@@ -75,7 +75,6 @@ const GameContainer = (): JSX.Element => {
   };
 
   const displayWinner = () => {
-    
     if (winner !== null && turnEl !== null && winnerEl !== null) {
       winnerEl.style.display = "block";
       turnEl.style.display = "none";
