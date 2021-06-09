@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Gameboard from "./Gameboard";
 const GameContainer = () => {
+
+  let winnerEl = document.getElementById("winner")
+  let turnEl = document.getElementById("turn")
+
   const [turn, setTurn] = useState("X");
   const [winner, setWinner] = useState(null);
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
@@ -42,8 +46,10 @@ const GameContainer = () => {
     });
     setBoard(["", "", "", "", "", "", "", "", ""]);
     setWinner(null);
-    document.getElementById("winner").style.display = "none";
-    document.getElementById("turn").style.display = "block";
+    if (turnEl !== null && winnerEl !== null) {
+    winnerEl.style.display = "none";
+    turnEl.style.display = "block";
+    }
     setTurn("X");
   };
 
@@ -69,9 +75,10 @@ const GameContainer = () => {
   };
 
   const displayWinner = () => {
-    if (winner !== null) {
-      document.getElementById("winner").style.display = "block";
-      document.getElementById("turn").style.display = "none";
+    
+    if (winner !== null && turnEl !== null && winnerEl !== null) {
+      winnerEl.style.display = "block";
+      turnEl.style.display = "none";
     }
   };
   return (
