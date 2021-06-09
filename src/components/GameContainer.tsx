@@ -67,7 +67,7 @@ const GameContainer = (): JSX.Element => {
         boxes.forEach((element) => {
           element.style.pointerEvents = "none";
         });
-        setWinner(board[combo[0]]);
+        setWinner(`${board[combo[0]]}`); //// check this when page loads
         displayWinner();
         return turn;
       }
